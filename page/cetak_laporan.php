@@ -88,7 +88,7 @@
                 $harga=$data['total'];
                 $ppn=0.1;
                 $hitung_ppn =$harga*$ppn;
-                $harga_sekarang = $harga - $hitung_ppn;
+                $harga_sekarang = $harga + $hitung_ppn;
                 echo $hitung_ppn;
             ?>
                 </td>
@@ -116,3 +116,5 @@
 </body>
 
 </html>
+
+<!-- https://www.google.com/search?q=checkout+ui+ux&sxsrf=AJOqlzV2-6Er9O6oDqopsQ7--VXQNtd_rQ:1675753431551&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjD3pKA7IL9AhXDSGwGHfLSCXcQ_AUoAXoECAEQAw&biw=1920&bih=1007&dpr=1#imgrc=nL34z5Fll2hjfM -->

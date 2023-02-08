@@ -34,7 +34,8 @@
                       <th class="text-center">No</th>
                       <th>Nama</th>
                       <th>Username</th>
-                      <th colspan="2">No HP</th>
+                      <th>Alamat</th>
+                      <th>No HP</th>
                     </tr>
                   </thead>
                   <tbody>

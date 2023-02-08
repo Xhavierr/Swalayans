@@ -13,25 +13,37 @@
           </ol>
         </nav>
       </div>
-      <div class="col-12 col-md-6 order-md-2 d-flex justify-content-end">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#primary">
-            <i class="bi bi-person-plus-fill"></i>
-          </button>
+      <div class="col-12 col-md-6 order-md-2 d-flex justify-content-end">        
+        <form action="" method="post" class="form-horizontal">
+          <div class="form-group row">
+              <div class="col-sm-5">
+                  <input type="date" name="tanggal_awal" class=" form-control">
+              </div>
+              <div class="col-sm-5">
+                  <input type="date" name="tanggal_akhir"  class=" form-control">
+              </div>
+              <div class="col-sm-2">
+                  <button type="submit" name="tampilkan" class="btn btn-primary fa fa-search p-2"></button>
+              </div>
+          </div>
         </form>
       </div>
     </div>
   </div>
 </div>
 
+
 <?php
-    include "auth/koneksi.php";
-    $sql = "SELECT * FROM `V_transaksi` ORDER BY `V_transaksi`.`id_transaksi` DESC";
-    $query = mysqli_query($koneksi, $sql);
-    $no = 0; 
-    while ($d = mysqli_fetch_array($query)) {
-    $no++
+  include 'koneksi.php';
+  if (isset($_POST["tampilkan"])) {
+      $tanggal_awal = $_POST['tanggal_awal'];
+      $tanggal_akhir = $_POST['tanggal_akhir'];
+      $query = mysqli_query($koneksi, "SELECT * FROM v_transaksi WHERE tanggal BETWEEN '$tanggal_awal' AND '$tanggal_akhir' ");
+
+  } else {
+      $query = mysqli_query($koneksi, "SELECT * FROM v_transaksi");
+  }
+  while ($d = mysqli_fetch_array($query)) {
 ?>
 <div class="accordion accordion-flush py-2" id="accordionFlushExample">
   <div class="accordion-item">

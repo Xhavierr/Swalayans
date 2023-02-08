@@ -33,6 +33,7 @@
   <style>
     #animasi {
       transition: transform 250ms;
+      /* transition: background-color 0.5s ease; */
     }
 
     #animasi:hover {
@@ -45,7 +46,7 @@
 
 </head>
 
-<body style="background-color: #e2edff;">
+<body>
   <script src="assets/js/initTheme.js"></script>
   <div id="app">
     <div id="main" class="layout-horizontal">
@@ -228,6 +229,9 @@
                               break;
                               case 'transaksi_detail';
                               echo 'class="sidebar-item active"';
+                              break;
+                              case 'keranjang';
+                              echo 'class="sidebar-item active"';
                           }
                       }
                   ?> class="sidebar-item">
@@ -284,9 +288,9 @@
                     break;
                     case 'laporan_transaksi';
                     include 'page/laporan_transaksi.php';
-                    // break;
-                    // case 'cetak_laporan';
-                    // include 'page/cetak_laporan.php';
+                    break;
+                    case 'keranjang';
+                    include 'page/keranjang.php';
                 }
             }
         ?>

@@ -32,9 +32,9 @@
     $query = mysqli_query($koneksi,"SELECT * FROM barang WHERE id_barang = '$id_barang'");
     $data = mysqli_fetch_array($query);
 ?>
-<form action="proses/transaksi.php?aksi=simpan" method="post">
-    <div class="card">
-        <div class="card-body">
+<div class="card">
+    <div class="card-body">
+        <form action="proses/transaksi.php?aksi=simpan" method="post">
             <div class="row">
                 <div class="col-md-5" style="height: 550px;">
                     <input type="hidden" name="id_barang" value="<?php echo $data['id_barang']?>" class="form-control">
@@ -114,32 +114,36 @@
                             $querykode = mysqli_query($koneksi, 
                             "SELECT max(id_transaksi) as idterbesar FROM transaksi");
                             $data = mysqli_fetch_array($querykode);
-                            $id_barang = $data['idterbesar'];
-                            $urutan = (int) substr($id_barang, 3, 3);
+                            $id_transaksi = $data['idterbesar'];
+                            $urutan = (int) substr($id_transaksi, 3, 3);
                             $urutan++;
                             $huruf = "PLG";
-                            $idtransaksi = $huruf . sprintf("%03s", $urutan);
+                            $id_transaksi = $huruf . sprintf("%03s", $urutan);
 
                             $Now = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
                         ?>
                             <div class="col-3 mx-2">
-                                <input type="text" name="jumlah" id="jumlah" onkeyup="hitung()" class="form-control form-control-lg">
+                                <input type="number" name="jumlah" id="jumlah" onchange="hitung()" class="form-control">
                                 <input type="hidden" name="id_user" value="<?= $_SESSION['id_user'] ?>"
                                     class="form-control">
-                                <input type="hidden" name="id_transaksi" value="<?= $idtransaksi ?>"
+                                <input type="hidden" name="id_transaksi" value="<?= $id_transaksi ?>"
                                     class="form-control">
                                 <input type="hidden" name="tanggal" value="<?= $Now->format('Y-m-d H:i:s') ?>"
                                     class="form-control">
                             </div>
                         </div>
                         <div class="row mt-5">
-                            <div class="col-7" style="margin-top: 100px;">
-                                <h4 class="fa fs-4 fa text-black">Total <div class="text-success fa fa fs-4">Rp.</div></h4><input type="text" name="total" readonly class="text-success border-0 fa fa fs-4" id="total"></input>
+                            <div class="col-6" style="margin-top: 100px;">
+                                <h4 class="fa fs-4 fa text-black">Total <div class="text-success fa fa fs-4">Rp.</div>
+                                </h4><input type="text" name="total" readonly class="text-success border-0 fa fa fs-4"
+                                id="total"></input>
+                                <input type="hidden" name="id_barang" value="<?= $id_barang ?>">
                             </div>
-                            <div class="col-2 d-flex justify-content-end" style="margin-top: 100px;">
-                                <button type="submit" class="btn btn-lg btn-success fa fa-cart-plus"></button>
+                            <div class="col-3 d-flex justify-content-end" style="margin-top: 100px;">
+                                <button type="submit" class="btn btn-lg btn-primary fa fa-cart-plus"></button>
+                                <button type="submit" class="btn btn-lg btn-success fa fa-dolar mx-2"> Buys</button>
                             </div>
-                        </div>                 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,19 +151,6 @@
     </div>
 </form>
 
-
-
-<!-- <div class="row">
-    <div class="col-12">
-        <button id="plus" class="border"> + </button>
-        <input type="text" name="jumlah" id="jumlah" value="" onkeyup="hitung()" class="border">
-        <button id="minus" class="border"> - </button>
-        <p>
-            Button Clicked <span id="display">0</span> Times
-        </p>
-    </div>
-</div>
- -->
 
 <script>
     function hitung() {

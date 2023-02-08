@@ -13,7 +13,11 @@ switch($aksi){
     $total = $_POST['total'];
     $id_user = $_POST['id_user'];
     $query = mysqli_query($koneksi, "INSERT INTO transaksi VALUES('$id_transaksi','$id_pelanggan','$tanggal','$id_barang','$jumlah','$total','$id_user')");
-    header("location:../admin.php?page=transaksi");
+    
+    $id_barang = $_POST['id_barang'];
+    $query = mysqli_query($koneksi, "INSERT INTO keranjang
+    VALUES('$id_pelanggan','$id_barang','$id_pelanggan')");
+    header("location:../admin.php?page=barang");
     break;
 
   case 'update':

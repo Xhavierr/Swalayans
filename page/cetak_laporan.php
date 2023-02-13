@@ -42,7 +42,7 @@
             switch($id_transaksi){
                 case $id_transaksi;
                 include '../koneksi.php';
-                $query = mysqli_query($koneksi,"SELECT * FROM v_transaksi WHERE id_transaksi = '$id_transaksi'");
+                $query = mysqli_query($koneksi,"SELECT * FROM transaksi INNER JOIN keranjang ON keranjang.id_user=transaksi.id_user INNER JOIN barang ON keranjang.id_barang=barang.id_barang INNER JOIN user ON user.id_user=transaksi.id_user WHERE id_transaksi = '$id_transaksi'");
                 $data = mysqli_fetch_array($query);
                 break;
             }

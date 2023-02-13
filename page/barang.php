@@ -52,32 +52,32 @@ if(isset($_GET['cari'])){
         <div class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2">
             <div class="row">
                 <div class="col-sm-3 p-3 d-flex justify-content-start">
-                    <img src="gambar/<?php echo $d['gambar']?>" class="rounded" width="250px" height="250px">
+                    <img src="gambar/<?php echo $d['gambar']?>" class="rounded" width="180px" height="180px">
                 </div>
                 <div class="col-md-9">
                     <div class="row">
                         <div class="col-12 d-flex justify-content-end">
-                            <h6><i class="fa fa" aria-hidden="true"><?php echo $d['id_barang']?></i></h6>
+                            <h7><i class="fa fa" aria-hidden="true"><?php echo $d['id_barang']?></i></h7>
                         </div>
-                        <div class="col-md-3 p-5 mt-3">
-                            <h3 class="fw-bold mb-1"><i class="fa fa" aria-hidden="true"> <?php echo $d['nama_barang']?></i></h3>
-                            <p class="text-muted mb-0">The best clothes u ever buys</p>
+                        <div class="col-md-3 py-5">
+                            <h5 class="fw-bold mb-1"><i class="fa fa" aria-hidden="true"> <?php echo $d['nama_barang']?></i></h5>
+                            <p class="text-muted mb-0"><small>The best clothes u ever buys</small></p>
                         </div>
-                        <div class="col-md-1 p-5 mt-3">
-                            <h3 class="fw-bold mb-1"><i class="fa fa" aria-hidden="true"> <?php echo $d['stok']?></i></h3>
-                            <p class="text-muted mb-0">Stok</p>
+                        <div class="col-md-1 py-5">
+                            <h5 class="fw-bold mb-1"><i class="fa fa" aria-hidden="true"> <?php echo $d['stok']?></i></h5>
+                            <p class="text-muted mb-0"><small>Stok</small></p>
                         </div>
-                        <div class="col-md-4 p-5 mt-3">
-                            <h3 class="fw-bold mb-1"><i class="fa fa" aria-hidden="true">
+                        <div class="col-md-4 py-5">
+                            <h5 class="fw-bold mb-1"><i class="fa fa" aria-hidden="true">
                             <?php  
                                 echo "Rp. " . number_format($d['harga'], 0, ".", ".");
                             ?>
-                            </i></h3>
-                            <p class="text-muted mb-0">Harga</p>
+                            </i></h5>
+                            <p class="text-muted mb-0"><small>Harga</small></p>
                         </div>
-                        <div class="col-md-3 p-5 mt-5">
+                        <div class="col-md-4 mt-5">
                             <a href="proses/barang.php?aksi=show&id_barang=<?php echo $d['id_barang'] ?>" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                            <a href="admin.php?page=edit_barang&id_barang=<?php echo $d['id_barang'] ?>" class="btn btn-warning mx-2"><i class="bi bi-pencil-fill"></i></a>
+                            <a href="admin.php?page=edit_barang&id_barang=<?php echo $d['id_barang'] ?>" class="btn btn-warning mx-1"><i class="bi bi-pencil-fill"></i></a>
                             <a onclick="swalDelete('proses/barang.php?aksi=delete&id_barang=<?php echo $d['id_barang'] ?>')" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                         </div>
                     </div>

@@ -7,9 +7,10 @@ if(isset($_POST['submit'])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
     $no_hp = $_POST["no_hp"];
+    $level = "admin";
     
     // Query untuk menambahkan data
-    $query = "INSERT INTO user VALUES('$id_user','$nama_user','$jenis_kelamin','$username','$password','$no_hp')";
+    $query = "INSERT INTO user VALUES('$id_user','$nama_user','$jenis_kelamin','$username','$password','$no_hp','$level')";
     
     // Eksekusi query
     if(mysqli_query($koneksi, $query)) {

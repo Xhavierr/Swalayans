@@ -260,7 +260,7 @@
       </div>
     </div>
     <div id="main" style="margin-top:6rem">
-
+         
       <?php 
             if(isset($_GET['page'])){
                 $page = $_GET['page'];

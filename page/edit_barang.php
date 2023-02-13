@@ -35,48 +35,28 @@
     $query = mysqli_query($koneksi,"SELECT * FROM barang WHERE id_barang = '$id_barang'");
     $data = mysqli_fetch_array($query);
 ?>
+
 <div class="row">
     <div class="col-md-4">
-        <div class="card shadow-sm">
-            <div class="card-body d-flex justify-content-center">
-                <div class="row p-5">
-                    <div class="col-12">
-                        <img src="gambar/<?php echo $data['gambar']?>" class="rounded-circle mb-5" width="250px" height="250px">
-                        <div class="col-12 border-bottom">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h6>Nama</h6>
-                                </div>
-                                <div class="col-6 text-end">
-                                    <h6><?php echo $data['nama_barang']?></h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 border-bottom mt-3">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h6>Stok</h6>
-                                </div>
-                                <div class="col-6 text-end">
-                                    <h6><?php echo $data['stok']?></h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 border-bottom mt-3">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h6>Harga</h6>
-                                </div>
-                                <div class="col-6 text-end">
-                                    <h6><?php echo $data['harga']?></h6>
-                                </div>
-                            </div>
-                        </div>
+    <div class="card shadow-sm">
+                <div class="card-header">
+                    <div class="card-body text-center">
+                        <img src="gambar/<?php echo $data['gambar']?>" class="rounded-circle border border-2" width="180px" height="180px">
+                        <h6 class="mt-3"><?php echo $data['nama_barang']?></h6>
+                        <ul class="list-group list-group-unbordered mt-3">
+                            <li class="list-group-item" style="border-top: 2px; border-left:2px; border-right:2px;">
+                            <b class="pull-left">Username</b><a class="pull-right"><?php echo $data['nama_barang']?></a>
+                            </li>
+                            <li class="list-group-item" style="border-top: 2px; border-left:2px; border-right:2px;">
+                            <b class="pull-left">Email</b><a class="pull-right"><?php echo $data['stok']?></a>
+                            </li>
+                            <li class="list-group-item" style="border-top: 2px; border-left:2px; border-right:2px;">
+                            <b class="pull-left">Bio</b><a class="pull-right"><?php echo $data['harga']?></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
+             </div>
     </div>
     <div class="col-md-8">
       <h3>Edit Barang</h3>

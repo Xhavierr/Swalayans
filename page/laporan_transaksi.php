@@ -38,12 +38,15 @@
   if (isset($_POST["tampilkan"])) {
       $tanggal_awal = $_POST['tanggal_awal'];
       $tanggal_akhir = $_POST['tanggal_akhir'];
-      $query = mysqli_query($koneksi, "SELECT * FROM v_transaksi WHERE tanggal BETWEEN '$tanggal_awal' AND '$tanggal_akhir' ");
+      $query = mysqli_query($koneksi, "SELECT * FROM transaksi WHERE tanggal BETWEEN '$tanggal_awal' AND '$tanggal_akhir' ");
 
   } else {
-      $query = mysqli_query($koneksi, "SELECT * FROM v_transaksi");
-  }
-  while ($d = mysqli_fetch_array($query)) {
+      $query = mysqli_query($koneksi, "SELECT * FROM transaksi");
+      // $data = mysqli_fetch_array($query);
+      // var_dump($data);
+      // die;
+    }
+  while ($d = mysqli_fetch_assoc($query)) {
 ?>
 <div class="accordion accordion-flush py-2" id="accordionFlushExample">
   <div class="accordion-item">
@@ -53,7 +56,7 @@
         aria-controls="flush-collapseOne">
 
         <div class="col-9 mx-3">
-          <h6><i class="fa fa-user" aria-hidden="true"> <?php echo ucfirst($d['nama_pelanggan']) ?></i></h6>
+          <h6><i class="fa fa-user" aria-hidden="true"> <?php echo ucfirst($d['id_transaksi']) ?></i></h6>
         </div>
         <div class="col-2 d-flex justify-content-end">
           <div class="row">
@@ -67,6 +70,23 @@
             </div>
           </div>
         </div>
+        
+        <?php
+          include 'koneksi.php';
+          if (isset($_POST["tampilkan"])) {
+              $tanggal_awal = $_POST['tanggal_awal'];
+              $tanggal_akhir = $_POST['tanggal_akhir'];
+              $query = mysqli_query($koneksi, "SELECT * FROM transaksi INNER JOIN keranjang ON keranjang.id_user=transaksi.id_user INNER JOIN barang ON keranjang.id_barang=barang.id_barang INNER JOIN user ON user.id_user=transaksi.id_user WHERE tanggal BETWEEN '$tanggal_awal' AND '$tanggal_akhir' ");
+
+          } else {
+              $query = mysqli_query($koneksi, "SELECT * FROM transaksi INNER JOIN keranjang ON keranjang.id_user=transaksi.id_user INNER JOIN barang ON keranjang.id_barang=barang.id_barang INNER JOIN user ON user.id_user=transaksi.id_user");
+              // $data = mysqli_fetch_array($query);
+              // var_dump($data);
+              // die;
+            }
+          while ($d = mysqli_fetch_assoc($query)) {
+        ?>
+
 
       </div>
     </h2>
@@ -101,7 +121,7 @@
                     <p class="text-muted mb-0">Jumlah Pembelian = <?= $d['jumlah'] ?></p>
                   </div>
                   <div class="col-md-3 py-4">
-                    <h3 class="fw-bold mb-1"><i class="fa fa" aria-hidden="true"> <?php echo $d['nama_pelanggan']?></i>
+                    <h3 class="fw-bold mb-1"><i class="fa fa" aria-hidden="true"> <?php echo $d['nama_user']?></i>
                     </h3>
                     <p class="text-muted mb-0">Pelanggan</p>
                   </div>
@@ -119,12 +139,13 @@
                     </a> -->
                   </div>
                 </div>
-
+                
               </div>
             </div>
           </div>
         </div>
       </div>
+      <?php } ?>
     </div>
   </div>
 </div>

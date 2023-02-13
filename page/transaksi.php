@@ -44,21 +44,21 @@
                     <div class="card-body d-flex justify-content-center">
                         <div class="row">
                             <div class="col-md-12 d-flex justify-content-center">
-                                <img src="gambar/<?php echo $d['gambar']?>" class="rounded p-2 mb-3" width="100%"
-                                    height="280px">
+                                <img src="gambar/<?php echo $d['gambar']?>" class="rounded p-2 mb-3" width="180px"
+                                    height="180px">
                             </div>
                             <div class="col-12">
-                                <h3 class="fw-bold px-3"><i class="fa fa" aria-hidden="true">
-                                        <?php echo $d['nama_barang']?></i></h3>
+                                <h5 class="fw-bold px-3"><i class="fa fa" aria-hidden="true">
+                                        <?php echo $d['nama_barang']?></i></h5>
                                 <!-- <p class="text-muted mb-0 px-3">The best clothes u ever buys</p> -->
                             </div>
                             <div class="col-12">
-                                <h5 class="fw-bold mb-1 px-3 text-secondary"><i class="fa fa" aria-hidden="true">
+                                <h7 class="fw-bold mb-1 px-3 text-secondary"><i class="fa fa" aria-hidden="true">
                                         <?php  
                                 echo "Rp. " . number_format($d['harga'], 0, ".", ".") ;
                                 echo" - Rp. 100.000"
                             ?>
-                                    </i></h5>
+                                    </i></h7>
                             </div>
 
                         </div>

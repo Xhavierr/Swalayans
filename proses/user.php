@@ -11,7 +11,8 @@ switch($aksi){
     $username = $_POST['username'];
     $password = $_POST['password'];
     $no_hp = $_POST['no_hp'];
-    $query = mysqli_query($koneksi, "INSERT INTO user VALUES('$id_user','$nama_user','$jenis_kelamin','$username','$password','$no_hp')");
+    $level = "admin";
+    $query = mysqli_query($koneksi, "INSERT INTO user VALUES('$id_user','$nama_user','$jenis_kelamin','$username','$password','$no_hp','$level')");
     header("location:../admin.php?page=user");
     break;
 

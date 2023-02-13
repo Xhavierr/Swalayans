@@ -136,20 +136,23 @@
                             <div class="col-6" style="margin-top: 100px;">
                                 <h4 class="fa fs-4 fa text-black">Total <div class="text-success fa fa fs-4">Rp.</div>
                                 </h4><input type="text" name="total" readonly class="text-success border-0 fa fa fs-4"
-                                id="total"></input>
+                                    id="total"></input>
                                 <input type="hidden" name="id_barang" value="<?= $id_barang ?>">
                             </div>
                             <div class="col-3 d-flex justify-content-end" style="margin-top: 100px;">
                                 <button type="submit" class="btn btn-lg btn-primary fa fa-cart-plus"></button>
+                            </form>
+                            <form action="">
+                                <input type="hidden" name="id_barang" value="<?= $id_barang ?>">
                                 <button type="submit" class="btn btn-lg btn-success fa fa-dolar mx-2"> Buys</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            </form>
     </div>
-</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 <script>

@@ -13,7 +13,9 @@ switch($aksi){
     $total = $_POST['total'];
     $id_user = $_POST['id_user'];
     $query = mysqli_query($koneksi, "INSERT INTO transaksi VALUES('$id_transaksi','$id_pelanggan','$tanggal','$id_barang','$jumlah','$total','$id_user')");
-    
+    break;    
+
+  case 'keranjang':
     $id_barang = $_POST['id_barang'];
     $query = mysqli_query($koneksi, "INSERT INTO keranjang
     VALUES('$id_pelanggan','$id_barang','$id_pelanggan')");
@@ -29,6 +31,7 @@ switch($aksi){
     $query = mysqli_query($koneksi,"UPDATE pelanggan SET nama_pelanggan = '$nama_pelanggan', jenis_kelamin = '$jenis_kelamin', alamat = '$alamat', no_hp = '$no_hp' WHERE id_pelanggan = '$id_pelanggan'");
     header("location:../admin.php?page=pelanggan");
     break;
+    
   case 'delete':
     $id_pelanggan = $_GET['id_pelanggan'];
     $query = mysqli_query($koneksi,"DELETE FROM pelanggan WHERE id_pelanggan = '$id_pelanggan'");

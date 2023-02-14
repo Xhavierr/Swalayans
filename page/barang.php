@@ -51,7 +51,7 @@ if(isset($_GET['cari'])){
     <div class="list-group list-group-light shadow-sm rounded my-2">
         <div class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2">
             <div class="row">
-                <div class="col-sm-3 p-3 d-flex justify-content-start">
+                <div class="col-sm-3 p-3 d-flex justify-content-center">
                     <img src="gambar/<?php echo $d['gambar']?>" class="rounded" width="180px" height="180px">
                 </div>
                 <div class="col-md-9">

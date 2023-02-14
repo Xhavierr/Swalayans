@@ -7,7 +7,7 @@ $query = mysqli_query(
 );
 $data = mysqli_fetch_array($query);
 ?>
-<form action="proses/keranjang.php" method="post">
+<form action="proses/keranjang.php?aksi=simpan" method="post">
 <div class="row px-3" style="margin-top: 9rem;">
     <div class="col-md-8 text-center">
             <img src="gambar/<?= $data[
@@ -22,7 +22,7 @@ $data = mysqli_fetch_array($query);
         <p class="text-danger fs-6 mb-3">$.<?= $data['harga'] ?></p>
         <div class="text-black">
             <label for="jumlah" class="fa fa-calculator py-3 fs-6 text-secondary"> Jumlah</label>
-            <input id="jumlah" type="number" name="jumlah" class="w-100 mb-2" style="height: 45px;"/>
+            <input id="jumlah" type="number" name="jumlah" class="w-100 mb-2" style="height: 45px;" required autofocus/>
         </div>
         <button type="submit" class="btn w-100" style="background-color: black;"><h6 class=" text-white py-1 mt-2"> Add to bag</h6></button>
 
@@ -81,3 +81,4 @@ $data = mysqli_fetch_array($query);
     </div>
 </div>
 </form>
+

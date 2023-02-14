@@ -126,6 +126,15 @@
               required
               autofocus
             />
+            <input
+              type="hidden"
+              class="form-control"
+              placeholder="Nama"
+              name="id_user"
+              value="<?=$iduser?>"
+              required
+              autofocus
+            />
             <div class="form-control-icon">
               <i class="bi bi-people-fill"></i>
             </div>

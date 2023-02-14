@@ -13,18 +13,18 @@
           </ol>
         </nav>
       </div>
-      <div class="col-12 col-md-6 order-md-2 d-flex justify-content-end">        
+      <div class="col-12 col-md-6 order-md-2 d-flex justify-content-end">
         <form action="" method="post" class="form-horizontal">
           <div class="form-group row">
-              <div class="col-sm-5">
-                  <input type="date" name="tanggal_awal" class=" form-control">
-              </div>
-              <div class="col-sm-5">
-                  <input type="date" name="tanggal_akhir"  class=" form-control">
-              </div>
-              <div class="col-sm-2">
-                  <button type="submit" name="tampilkan" class="btn btn-primary fa fa-search p-2"></button>
-              </div>
+            <div class="col-sm-5">
+              <input type="date" name="tanggal_awal" class=" form-control">
+            </div>
+            <div class="col-sm-5">
+              <input type="date" name="tanggal_akhir" class=" form-control">
+            </div>
+            <div class="col-sm-2">
+              <button type="submit" name="tampilkan" class="btn btn-primary fa fa-search p-2"></button>
+            </div>
           </div>
         </form>
       </div>
@@ -70,7 +70,7 @@
             </div>
           </div>
         </div>
-        
+
         <?php
           include 'koneksi.php';
           if (isset($_POST["tampilkan"])) {
@@ -139,7 +139,7 @@
                     </a> -->
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div>

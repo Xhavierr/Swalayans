@@ -17,6 +17,9 @@ if ($_SESSION['status'] != 'login') {
   rel="stylesheet"
 />
 
+    <!-- toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
     <link rel="stylesheet" href="assets/css/main/app.css" />
     <link rel="stylesheet" href="assets/css/main/app-dark.css" />
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
@@ -55,12 +58,12 @@ if ($_SESSION['status'] != 'login') {
     <div id="app">
         <div id="main" class="layout-horizontal">
             <header id="navbar" class="mb-5">
-                <div class="header-top" style="height:40px;background-color:black">
-                    <div class="text-white fa fa">letgo dadkwbkdbawdn wdoawnd, Shop Now</div>
+                <div class="header-top text-center" style="height:50px;background-color:black">
+                    <div class="text-white fa fa" style="margin-top:-10px;">Orang yang pertama x belanja dapat <span class="text-danger"> $.1000</span>,<a href="user.php?page=shop" class="border-bottom mx-2 text-white"> Lets go</a></div>
                 </div>
                 <div class="header-top" style="height:50px">
                     <div class="row px-2">
-                        <div class="col-4">
+                      <div class="col-4">
                                 <!-- Burger button responsive -->
                                 <a href="#" class="burger-btn d-block d-xl-none">
                                     <i class="bi bi-justify fs-3"></i>
@@ -85,7 +88,7 @@ if ($_SESSION['status'] != 'login') {
                                         ]; ?></h6>
                                     </div>
                                     <div class="col-4 border-end border-black d-flex justify-content-center">
-                                        <h6 class="fa fa text-danger"> Log out</h6>
+                                        <a href="auth/logout.php"><h6 class="fa fa text-danger"> Log out</h6></a>
                                     </div>
                                     <div class="col-4 d-flex justify-content-start">
                                         <a href="user.php?page=cart" class="text-black">
@@ -98,6 +101,7 @@ if ($_SESSION['status'] != 'login') {
                                                         "SELECT * FROM keranjang WHERE id_user = '$id_user'"
                                                     );
                                                     $data = mysqli_num_rows($query);
+                                                    // die;
                                                 ?>
                                             <span class="text-white badge bg-secondary"><?=$data?></span>      
                                         </a>
@@ -275,6 +279,8 @@ if ($_SESSION['status'] != 'login') {
 
         </div>
     </div>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- MDB -->
     <script
     type="text/javascript"
@@ -290,7 +296,7 @@ if ($_SESSION['status'] != 'login') {
 
         function scrollFunction() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("navbar").style.top = "-40px";
+                document.getElementById("navbar").style.top = "-50px";
             } else {
                 document.getElementById("navbar").style.top = "0";
             }

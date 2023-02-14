@@ -1,5 +1,5 @@
 <?php 
 
-$koneksi = mysqli_connect("localhost","root","","dbswalayan")
+$koneksi = mysqli_connect("localhost","root","","db_swalayan")
 
 ?>

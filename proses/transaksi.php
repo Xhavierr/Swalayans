@@ -10,7 +10,8 @@ switch($aksi){
     $tanggal = $_POST['tanggal'];
     $total = $_POST['total'];
     $query = mysqli_query($koneksi, "INSERT INTO transaksi VALUES('$id_transaksi','$id_user','$tanggal','$total')");
-    break;    
+    header("location:../user.php?page=home");
+    break;
 
   case 'delete':
     $id_pelanggan = $_GET['id_pelanggan'];

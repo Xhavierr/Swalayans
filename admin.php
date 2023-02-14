@@ -8,9 +8,6 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laundry | Dashboard</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
   <!-- MDB -->
@@ -29,6 +26,7 @@
 
   <link rel="stylesheet" href="assets/css/pages/simple-datatables.css" />
   <link rel="stylesheet" href="assets/extensions/rater-js/lib/style.css" />
+
 
   <style>
     #animasi {
@@ -186,21 +184,6 @@
                         if(isset($_GET['page'])){
                             $page = $_GET['page'];
                             switch($page){
-                                case 'pelanggan';
-                                echo 'class="sidebar-item active"';
-                            }
-                        }
-                    ?> class="sidebar-item">
-              <a href="admin.php?page=pelanggan" class="sidebar-link">
-                <i class="fa fa-users"></i>
-                <span>Pelanggan</span>
-              </a>
-            </li>
-
-            <li <?php 
-                        if(isset($_GET['page'])){
-                            $page = $_GET['page'];
-                            switch($page){
                                 case 'barang';
                                 echo 'class="sidebar-item active"';
                             }
@@ -217,27 +200,6 @@
               <a href="admin.php?page=barang" class="sidebar-link">
                 <i class="bi bi-stack"></i>
                 <span>Barang</span>
-              </a>
-            </li>
-
-            <li <?php 
-                      if(isset($_GET['page'])){
-                          $page = $_GET['page'];
-                          switch($page){
-                              case 'transaksi';
-                              echo 'class="sidebar-item active"';
-                              break;
-                              case 'transaksi_detail';
-                              echo 'class="sidebar-item active"';
-                              break;
-                              case 'keranjang';
-                              echo 'class="sidebar-item active"';
-                          }
-                      }
-                  ?> class="sidebar-item">
-              <a href="admin.php?page=transaksi" class="sidebar-link">
-                <i class="bi bi-cart"></i>
-                <span>Transaksi</span>
               </a>
             </li>
 
@@ -306,7 +268,6 @@
   <!-- Need: Apexcharts -->
   <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
   <script src="assets/js/pages/dashboard.js"></script>
-
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     function swalDelete(link) {

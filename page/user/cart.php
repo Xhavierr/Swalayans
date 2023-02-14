@@ -1,5 +1,6 @@
 <form action="proses/transaksi.php?aksi=simpan" method="post">
 <div class="row px-4" style="margin-top: 10rem;">
+    <div class="col-12 border-bottom px-3 py-3"><h5 class="text-black fa fa-cart-plus fs-3"> C a r t</h5></div>
     <div class="col-md-8">
         <?php
         include 'koneksi.php';
@@ -13,6 +14,7 @@
         $total = $d['harga'] * $d['jumlah'];
         $tot_bayar += $total;
         ?>
+        
         <div class="col-11 pe-3 border-bottom border-black border-1">
             <div class="row">
                 <div class="col-3 d-flex justify-content-center">
@@ -52,7 +54,7 @@
                             <p class="text-secondary"><?=$d['jumlah'] ?></p>
                         </div>
                         <div class="col-2 mt-4 text-end">
-                            <h7 class="text-black"><span class="fa fa-close fs-3"></span></h7>
+                            <h7 class="text-black"><a href="proses/keranjang.php?aksi=delete&id_keranjang=<?php echo $d['id_keranjang'] ?>" class="fa fa-close fs-3 text-black"></a></h7>
                         </div>   
                         <div class="col-12 mt-4">
                             <div class="text-black fw-bold">$.<?= $d['harga']?></div>
